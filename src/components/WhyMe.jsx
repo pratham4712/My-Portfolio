@@ -1,76 +1,103 @@
-import { FaLightbulb, FaHandsHelping, FaLaptopCode, FaCogs, FaCheckCircle, FaBalanceScale, FaRocket, FaUserGraduate, 
-  FaPuzzlePiece, FaFlag } from 'react-icons/fa';
+import {
+  Lightbulb,
+  Sparkles,
+  Target,
+  Palette,
+  Handshake,
+  Eye,
+  Clock,
+  Layers,
+  MessageCircle,
+  Paintbrush
+} from "lucide-react";
 
-const features = [ 
+const cards = [
   {
-    icon: <FaLightbulb size={30} className="text-yellow-500" />,
-    title: "Entrepreneurial Vision",
-    desc: "I don’t just build IT solutions—I create sustainable systems designed to empower youth, and support national development.",
+    id: 1,
+    icon: <Lightbulb size={30} className="text-amber-400" />,
+    title: "Creative & Unique Designs",
+    desc: "I create eye-catching designs that stand out and make your brand memorable."
   },
   {
-    icon: <FaHandsHelping size={30} className="text-pink-500" />,
-    title: "Passionate About Youth Empowerment",
-    desc: "My mission goes beyond business success. I actively mentor students and young professionals to help them choose the right career path based on their strengths and aspirations.",
+    id: 2,
+    icon: <Sparkles size={30} className="text-violet-400" />,
+    title: "Attention to Detail",
+    desc: "I focus on every element, from typography and colors to spacing and composition."
   },
   {
-    icon: <FaLaptopCode size={30} className="text-blue-500" />,
-    title: "Real-World Experience",
-    desc: "With hands-on experience in software development, career guidance, and IT consulting, I deliver practical solutions that solve real business problems.",
+    id: 3,
+    icon: <Target size={30} className="text-cyan-400" />,
+    title: "Understanding Brand Identity",
+    desc: "I design visuals that reflect your brand's personality, values, and vision."
   },
   {
-    icon: <FaCogs size={30} className="text-green-500" />,
-    title: "Customized Solutions",
-    desc: "I focus on understanding your unique needs and providing tailor-made IT solutions, rather than one-size-fits-all approaches.",
+    id: 4,
+    icon: <Palette size={30} className="text-pink-400" />,
+    title: "Client-Focused Approach",
+    desc: "Your ideas and requirements are my priority. I turn your vision into reality."
   },
   {
-    icon: <FaCheckCircle size={30} className="text-purple-500" />,
-    title: "Commitment to Quality",
-    desc: "Every project I undertake is backed by strong attention to detail, reliability, and a commitment to excellence.",
+    id: 5,
+    icon: <Handshake size={30} className="text-emerald-400" />,
+    title: "Modern Design Trends",
+    desc: "I stay updated with the latest design trends while maintaining timeless creativity."
   },
   {
-    icon: <FaBalanceScale size={30} className="text-purple-500" />,
-    title: "Strong Ethical Foundation",
-    desc: "My work is driven by integrity, responsibility, and a genuine desire to positively impact society and the next generation.",
+    id: 6,
+    icon: <Eye size={30} className="text-blue-400" />,
+    title: "Quality Over Quantity",
+    desc: "I believe in delivering polished, meaningful, and high-quality designs."
   },
   {
-    icon: <FaRocket size={30} className="text-purple-500" />,
-    title: "Innovative Approach",
-    desc: "I stay up-to-date with the latest technologies and industry trends to deliver forward-thinking solutions and innovative strategies.",
+    id: 7,
+    icon: <Clock size={30} className="text-orange-400" />,
+    title: "On-Time Delivery",
+    desc: "I value your time and work hard to meet deadlines without compromising quality."
   },
   {
-    icon: <FaUserGraduate size={30} className="text-purple-500" />,
-    title: "Personalized Career Mentorship",
-    desc: "I provide one-on-one mentorship to help students and professionals discover their true potential and choose a career path that matches their passion and skills.",
+    id: 8,
+    icon: <Layers size={30} className="text-fuchsia-400" />,
+    title: "Versatile Design Skills",
+    desc: "From logos and branding to social media posts, banners, and marketing materials, I can handle different design needs."
   },
   {
-    icon: <FaPuzzlePiece size={30} className="text-purple-500" />,
+    id: 9,
+    icon: <MessageCircle size={30} className="text-sky-400" />,
     title: "Problem-Solving Mindset",
-    desc: "I thrive in solving complex challenges through logical thinking, creative strategies, and technical expertise.",
+    desc: "don't just make things look attractive; I create designs that communicate messages effectively."
   },
   {
-    icon: <FaFlag size={30} className="text-purple-500" />,
-    title: "Passion for Nation Building",
-    desc: "I believe that empowered youth are the backbone of a progressive nation, and I’m committed to contributing my skills and efforts to national development.",
-  }
+    id: 10,
+    icon: <Paintbrush size={30} className="text-rose-400" />,
+    title: "Passion for Creativity",
+    desc: "I genuinely love designing and put dedication, enthusiasm, and creativity into every project."
+  },
 ];
 
-function WhyMe () {
-  return(
-    <section className="bg-gradient-to-t from-yellow-500 to-emerald-500 py-16 px-6 space-y-6">
-      <h2 className="text-4xl font-bold text-center">💡 Why Choose Me Over Others</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
-        {features.map((feature, i) => (
-          <div
-            key={i}
-            className="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg space-y-2 text-center transition hover:-translate-y-2">
-            <div className="flex justify-center">{feature.icon}</div>
-            <h3 className="text-lg font-semibold">{feature.title}</h3>
-            <p className="text-gray-600">{feature.desc}</p>
+export default function WhyMe() {
+  return (
+    <section className="bg-zinc-950 px-6 py-12 space-y-6 flex flex-col items-center" style={{fontFamily:"'DM Sans',sans-serif"}}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@700;900&display=swap');
+      .ff{font-family:'Fraunces',serif}@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+      .fu{animation:fadeUp .6s ease forwards}
+      .card:hover { transform: rotate(-5deg); }
+      .icon{transition:transform .3s}`}</style>
+
+      {/* Heading */}
+      <h2 className="fu ff text-4xl md:text-5xl font-black text-white text-center">Why Choose <span className="text-amber-400">Me</span> Over Others</h2>
+
+      {/* Grid */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {cards.map((c, i) => (
+
+          <div key={i} className="rounded-md border border-blue-500 p-4 hover:border-amber-400/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-amber-400/10 backdrop-blur-sm">
+            <div className="">{c.icon}</div>
+            <h3 className="ff text-white font-bold text-lg leading-snug my-2">{c.title}</h3>
+            <p className="text-white/45 text-sm leading-relaxed">{c.desc}</p>
+            <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-amber-400/0 to-transparent group-hover:via-amber-400/40 transition-all duration-500"/>
           </div>
         ))}
       </div>
     </section>
-  )
+  );
 }
-
-export default WhyMe
